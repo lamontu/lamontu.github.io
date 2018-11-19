@@ -181,3 +181,38 @@
 {"name":"hexo","hostname":"LamontMac","pid":4278,"level":20,"msg":"Rendering index: \u001b[35mindex.html\u001b[39m","time":"2016-11-14T08:00:07.535Z","v":0}
 {"name":"hexo","hostname":"LamontMac","pid":4278,"level":30,"msg":"Good bye","time":"2016-11-14T08:00:10.982Z","v":0}
 {"name":"hexo","hostname":"LamontMac","pid":4278,"level":20,"msg":"Database saved","time":"2016-11-14T08:00:11.015Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Writing database to /Users/yuxiaofei/lamontu.github.io/db.json","time":"2018-11-19T14:47:30.275Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Hexo version: \u001b[35m3.8.0\u001b[39m","time":"2018-11-19T14:47:30.292Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Working directory: \u001b[35m~/lamontu.github.io/\u001b[39m","time":"2018-11-19T14:47:30.292Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Config loaded: \u001b[35m~/lamontu.github.io/_config.yml\u001b[39m","time":"2018-11-19T14:47:30.384Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-deployer-git\u001b[39m","time":"2018-11-19T14:47:30.431Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-archive\u001b[39m","time":"2018-11-19T14:47:30.433Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-category\u001b[39m","time":"2018-11-19T14:47:30.437Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-index\u001b[39m","time":"2018-11-19T14:47:30.439Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-tag\u001b[39m","time":"2018-11-19T14:47:30.440Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-ejs\u001b[39m","time":"2018-11-19T14:47:30.442Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-marked\u001b[39m","time":"2018-11-19T14:47:30.447Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-stylus\u001b[39m","time":"2018-11-19T14:47:30.448Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-server\u001b[39m","time":"2018-11-19T14:47:30.513Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Loading database.","time":"2018-11-19T14:47:30.522Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":30,"msg":"Start processing","time":"2018-11-19T14:47:30.530Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35m_posts/Golang-Learning.md\u001b[39m","time":"2018-11-19T14:47:30.585Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35mabout/index.md\u001b[39m","time":"2018-11-19T14:47:30.586Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35m_posts/Learning.md\u001b[39m","time":"2018-11-19T14:47:30.587Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35mcategories/index.md\u001b[39m","time":"2018-11-19T14:47:30.587Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35m_posts/My-New-Post.md\u001b[39m","time":"2018-11-19T14:47:30.589Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35m_posts/deploy-on-github-and-coding.md\u001b[39m","time":"2018-11-19T14:47:30.589Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35m_posts/hello-world.md\u001b[39m","time":"2018-11-19T14:47:30.589Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Processed: \u001b[35mtags/index.md\u001b[39m","time":"2018-11-19T14:47:30.592Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Generator: \u001b[35mpage\u001b[39m","time":"2018-11-19T14:47:30.740Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Generator: \u001b[35mpost\u001b[39m","time":"2018-11-19T14:47:30.741Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Generator: \u001b[35marchive\u001b[39m","time":"2018-11-19T14:47:30.741Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Generator: \u001b[35mcategory\u001b[39m","time":"2018-11-19T14:47:30.741Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Generator: \u001b[35mindex\u001b[39m","time":"2018-11-19T14:47:30.741Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Generator: \u001b[35mtag\u001b[39m","time":"2018-11-19T14:47:30.741Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Generator: \u001b[35masset\u001b[39m","time":"2018-11-19T14:47:30.741Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":30,"msg":"Hexo is running at \u001b[4mhttp://localhost:4000\u001b[24m . Press Ctrl+C to stop.","time":"2018-11-19T14:47:30.745Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Database saved","time":"2018-11-19T14:47:30.749Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":40,"msg":"No layout: \u001b[35mindex.html\u001b[39m","time":"2018-11-19T14:47:42.880Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":30,"msg":"Good bye","time":"2018-11-19T14:47:49.274Z","v":0}
+{"name":"hexo","hostname":"LamontMac","pid":90317,"level":20,"msg":"Database saved","time":"2018-11-19T14:47:49.283Z","v":0}
