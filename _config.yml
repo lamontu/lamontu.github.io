@@ -67,9 +67,8 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+###git@git.coding.net:lamont/lamont.git
 deploy:
   type: git
-  repo:
-    git@github.com:lamontu/lamontu.github.io.git
-    git@git.coding.net:lamont/lamont.git 
+  repo: git@github.com:lamontu/lamontu.github.io.git
   branch: master
