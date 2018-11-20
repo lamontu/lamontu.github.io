@@ -6,7 +6,3 @@ tags:
 # It's time to start 
 This is my first article.
 
-**Miss you, lly.** 
-
-
-*---lamontyu.*
