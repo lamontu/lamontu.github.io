@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="It’s time to startThis is my first article.">
+  <meta name="description" content="Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show debug output for time statistics  ProceduresCreate dump file using ProcDump or Task Manager">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="http://yoursite.com/2016/11/14/My-New-Post/index.html">
+<meta property="og:title" content="How to Debug Hang Issue">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/How-to-Debug-Hang-Issue/index.html">
 <meta property="og:site_name" content="SeekNull">
-<meta property="og:description" content="It’s time to startThis is my first article.">
+<meta property="og:description" content="Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show debug output for time statistics  ProceduresCreate dump file using ProcDump or Task Manager">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-20T12:14:58.678Z">
+<meta property="og:updated_time" content="2019-09-27T15:26:05.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Post">
-<meta name="twitter:description" content="It’s time to startThis is my first article.">
+<meta name="twitter:title" content="How to Debug Hang Issue">
+<meta name="twitter:description" content="Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show debug output for time statistics  ProceduresCreate dump file using ProcDump or Task Manager">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/14/My-New-Post/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/27/How-to-Debug-Hang-Issue/">
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>My New Post | SeekNull</title>
+  <title>How to Debug Hang Issue | SeekNull</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/My-New-Post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/How-to-Debug-Hang-Issue/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lamont">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">My New Post
+          <h1 class="post-title" itemprop="name headline">How to Debug Hang Issue
               
             
           </h1>
@@ -346,24 +346,12 @@
                 
               
 
-              <time title="Created: 2016-11-14 01:27:20" itemprop="dateCreated datePublished" datetime="2016-11-14T01:27:20+08:00">2016-11-14</time>
+              <time title="Created: 2019-09-27 08:07:04 / Modified: 23:26:05" itemprop="dateCreated datePublished" datetime="2019-09-27T08:07:04+08:00">2019-09-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-20 20:14:58" itemprop="dateModified" datetime="2018-11-20T20:14:58+08:00">2018-11-20</time>
               
             
           </span>
@@ -396,7 +384,17 @@
       
 
       
-        <h1 id="It’s-time-to-start"><a href="#It’s-time-to-start" class="headerlink" title="It’s time to start"></a>It’s time to start</h1><p>This is my first article.</p>
+        <h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li>ProcDump, Create the dump file for analysis</li>
+<li>WinDbg, Locate issue thread and call stack</li>
+<li>DebugView, Show debug output for time statistics</li>
+</ul>
+<h2 id="Procedures"><a href="#Procedures" class="headerlink" title="Procedures"></a>Procedures</h2><h3 id="Create-dump-file-using-ProcDump-or-Task-Manager"><a href="#Create-dump-file-using-ProcDump-or-Task-Manager" class="headerlink" title="Create dump file using ProcDump or Task Manager."></a>Create dump file using ProcDump or Task Manager.</h3><p>Use the below command to capture dump file<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; procdump -h -ma -w ProcessName.exe</span><br></pre></td></tr></table></figure></p>
+<p>We can generate dump file directly from Taks Manager if the operate system not hang.</p>
+<h3 id="Show-call-stacks-using-WinDbg-or-Visual-Studio"><a href="#Show-call-stacks-using-WinDbg-or-Visual-Studio" class="headerlink" title="Show call stacks using WinDbg or Visual Studio."></a>Show call stacks using WinDbg or Visual Studio.</h3><p>Load all symbols and then check all threads and stacks using the commad.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ~*kv</span><br></pre></td></tr></table></figure></p>
+<p>Usually we can locate which thread is hanging and which function is blocking the thread.</p>
+<h3 id="Add-stopwatch-debug-string-in-the-active-thread-functions"><a href="#Add-stopwatch-debug-string-in-the-active-thread-functions" class="headerlink" title="Add stopwatch debug string in the active thread functions"></a>Add stopwatch debug string in the active thread functions</h3><p>We can find the most time consuming function call if the hang issue is actually a performance issue. </p>
+<h3 id="Compare-between-normal-case-and-abnormal-case"><a href="#Compare-between-normal-case-and-abnormal-case" class="headerlink" title="Compare between normal case and abnormal case"></a>Compare between normal case and abnormal case</h3><p>If we don’t have any obvious causes during the above analysis, try to create some normal cases. Each normal case should only differ from the abnormal case in one perspect. Then compare the the symptom in above analysis steps.</p>
 
       
     </div>
@@ -427,15 +425,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/20/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/20/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -544,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#It’s-time-to-start"><span class="nav-number">1.</span> <span class="nav-text">It’s time to start</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">1.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedures"><span class="nav-number">2.</span> <span class="nav-text">Procedures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-dump-file-using-ProcDump-or-Task-Manager"><span class="nav-number">2.1.</span> <span class="nav-text">Create dump file using ProcDump or Task Manager.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-call-stacks-using-WinDbg-or-Visual-Studio"><span class="nav-number">2.2.</span> <span class="nav-text">Show call stacks using WinDbg or Visual Studio.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-stopwatch-debug-string-in-the-active-thread-functions"><span class="nav-number">2.3.</span> <span class="nav-text">Add stopwatch debug string in the active thread functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compare-between-normal-case-and-abnormal-case"><span class="nav-number">2.4.</span> <span class="nav-text">Compare between normal case and abnormal case</span></a></li></ol></li></ol></div>
             
 
           </div>
