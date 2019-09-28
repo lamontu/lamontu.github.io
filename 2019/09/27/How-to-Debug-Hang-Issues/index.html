@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="I have successfully handled some hang issues this month.Here is a summary of my solution. Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/11/20/hello-world/index.html">
+<meta property="og:title" content="How to Debug Hang Issues">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/How-to-Debug-Hang-Issues/index.html">
 <meta property="og:site_name" content="SeekNull">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="I have successfully handled some hang issues this month.Here is a summary of my solution. Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-28T02:17:43.650Z">
+<meta property="og:updated_time" content="2019-09-28T03:15:55.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="How to Debug Hang Issues">
+<meta name="twitter:description" content="I have successfully handled some hang issues this month.Here is a summary of my solution. Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show d">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/20/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/27/How-to-Debug-Hang-Issues/">
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Hello World | SeekNull</title>
+  <title>How to Debug Hang Issues | SeekNull</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/How-to-Debug-Hang-Issues/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lamont">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">How to Debug Hang Issues
               
             
           </h1>
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="Created: 2018-11-20 00:07:09" itemprop="dateCreated datePublished" datetime="2018-11-20T00:07:09+08:00">2018-11-20</time>
+              <time title="Created: 2019-09-27 08:07:04" itemprop="dateCreated datePublished" datetime="2019-09-27T08:07:04+08:00">2019-09-27</time>
             
 
             
@@ -363,7 +363,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-28 10:17:43" itemprop="dateModified" datetime="2019-09-28T10:17:43+08:00">2019-09-28</time>
+                <time title="Modified: 2019-09-28 11:15:55" itemprop="dateModified" datetime="2019-09-28T11:15:55+08:00">2019-09-28</time>
               
             
           </span>
@@ -396,15 +396,20 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>I have successfully handled some hang issues this month.<br>Here is a summary of my solution.</p>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li>ProcDump, Create the dump file for analysis</li>
+<li>WinDbg, Locate issue thread and call stack</li>
+<li>DebugView, Show debug output for time statistics</li>
+</ul>
+<h2 id="Procedures"><a href="#Procedures" class="headerlink" title="Procedures"></a>Procedures</h2><h3 id="Create-a-dump-file-using-ProcDump-or-Task-Manager"><a href="#Create-a-dump-file-using-ProcDump-or-Task-Manager" class="headerlink" title="Create a dump file using ProcDump or Task Manager"></a>Create a dump file using ProcDump or Task Manager</h3><p>Use the below command to capture a dump file</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; procdump -h -ma -w ProcessName.exe</span><br></pre></td></tr></table></figure>
+<p>We can generate a dump file directly from Task Manager if the operating systems not hang.</p>
+<h3 id="Show-call-stacks-using-WinDbg-or-Visual-Studio"><a href="#Show-call-stacks-using-WinDbg-or-Visual-Studio" class="headerlink" title="Show call stacks using WinDbg or Visual Studio"></a>Show call stacks using WinDbg or Visual Studio</h3><p>Load all symbols and then check all threads and stacks using the command.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ~*kv</span><br></pre></td></tr></table></figure>
+<p>Usually, we can locate which thread is hanging and which function is blocking the thread.</p>
+<h3 id="Add-stopwatch-debug-strings-in-the-active-thread-functions"><a href="#Add-stopwatch-debug-strings-in-the-active-thread-functions" class="headerlink" title="Add stopwatch debug strings in the active thread functions"></a>Add stopwatch debug strings in the active thread functions</h3><p>We can find the most time-consuming function call if the hang issue is a performance issue.</p>
+<h3 id="Compare-between-the-normal-case-and-abnormal-case"><a href="#Compare-between-the-normal-case-and-abnormal-case" class="headerlink" title="Compare between the normal case and abnormal case"></a>Compare between the normal case and abnormal case</h3><p>If we don’t have any obvious causes during the above analysis, try to create some normal cases. Each normal case should only differ from the abnormal case in one perspective. Then compare the symptom in the above analysis steps.</p>
 
       
     </div>
@@ -435,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/14/My-New-Post/" rel="next" title="My New Post">
-                <i class="fa fa-chevron-left"></i> My New Post
+              <a href="/2018/11/20/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -444,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/27/How-to-Debug-Hang-Issues/" rel="prev" title="How to Debug Hang Issues">
-                How to Debug Hang Issues <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">1.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedures"><span class="nav-number">2.</span> <span class="nav-text">Procedures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-dump-file-using-ProcDump-or-Task-Manager"><span class="nav-number">2.1.</span> <span class="nav-text">Create a dump file using ProcDump or Task Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-call-stacks-using-WinDbg-or-Visual-Studio"><span class="nav-number">2.2.</span> <span class="nav-text">Show call stacks using WinDbg or Visual Studio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-stopwatch-debug-strings-in-the-active-thread-functions"><span class="nav-number">2.3.</span> <span class="nav-text">Add stopwatch debug strings in the active thread functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compare-between-the-normal-case-and-abnormal-case"><span class="nav-number">2.4.</span> <span class="nav-text">Compare between the normal case and abnormal case</span></a></li></ol></li></ol></div>
             
 
           </div>
