@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="I have successfully handled some hang issues this month. Here is a summary of my solution. Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show">
+  <meta name="description" content="I have successfully handled some hang issues this month. Here is a summary of my solution. Tools ProcDumpCreate the dump file for analysis. WinDbgShow fault modules, threads, and call stacks. DebugVie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Debug Hang Issues">
 <meta property="og:url" content="http://yoursite.com/2019/09/27/How-to-Debug-Hang-Issues/index.html">
 <meta property="og:site_name" content="SeekNull">
-<meta property="og:description" content="I have successfully handled some hang issues this month. Here is a summary of my solution. Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show">
+<meta property="og:description" content="I have successfully handled some hang issues this month. Here is a summary of my solution. Tools ProcDumpCreate the dump file for analysis. WinDbgShow fault modules, threads, and call stacks. DebugVie">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-28T03:29:56.317Z">
+<meta property="og:updated_time" content="2019-09-28T03:53:41.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to Debug Hang Issues">
-<meta name="twitter:description" content="I have successfully handled some hang issues this month. Here is a summary of my solution. Tools ProcDump, Create the dump file for analysis WinDbg, Locate issue thread and call stack DebugView, Show">
+<meta name="twitter:description" content="I have successfully handled some hang issues this month. Here is a summary of my solution. Tools ProcDumpCreate the dump file for analysis. WinDbgShow fault modules, threads, and call stacks. DebugVie">
 
 
 
@@ -363,7 +363,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-28 11:29:56" itemprop="dateModified" datetime="2019-09-28T11:29:56+08:00">2019-09-28</time>
+                <time title="Modified: 2019-09-28 11:53:41" itemprop="dateModified" datetime="2019-09-28T11:53:41+08:00">2019-09-28</time>
               
             
           </span>
@@ -398,18 +398,17 @@
       
         <p>I have successfully handled some hang issues this month. Here is a summary of my solution.</p>
 <h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
-<li>ProcDump, Create the dump file for analysis</li>
-<li>WinDbg, Locate issue thread and call stack</li>
-<li>DebugView, Show debug output for time statistics</li>
+<li><strong>ProcDump</strong><br>Create the dump file for analysis.</li>
+<li><strong>WinDbg</strong><br>Show fault modules, threads, and call stacks.</li>
+<li><strong>DebugView</strong><br>Display debug output for time statistics.</li>
 </ul>
-<h2 id="Procedures"><a href="#Procedures" class="headerlink" title="Procedures"></a>Procedures</h2><h3 id="Create-a-dump-file-using-ProcDump-or-Task-Manager"><a href="#Create-a-dump-file-using-ProcDump-or-Task-Manager" class="headerlink" title="Create a dump file using ProcDump or Task Manager"></a>Create a dump file using ProcDump or Task Manager</h3><p>Use the below command to capture a dump file</p>
+<h2 id="Procedures"><a href="#Procedures" class="headerlink" title="Procedures"></a>Procedures</h2><h3 id="Create-a-dump-file-using-ProcDump-or-Task-Manager"><a href="#Create-a-dump-file-using-ProcDump-or-Task-Manager" class="headerlink" title="Create a dump file using ProcDump or Task Manager"></a>Create a dump file using ProcDump or Task Manager</h3><p>We can generate a dump file directly from Task Manager if the operating systems don’t hang.<br>Otherwise, we should execute the below command before the hang issue happens.</p>
 <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; procdump -h -ma -w ProcessName.exe</span><br></pre></td></tr></table></figure>
-<p>We can generate a dump file directly from Task Manager if the operating systems not hang.</p>
-<h3 id="Show-call-stacks-using-WinDbg-or-Visual-Studio"><a href="#Show-call-stacks-using-WinDbg-or-Visual-Studio" class="headerlink" title="Show call stacks using WinDbg or Visual Studio"></a>Show call stacks using WinDbg or Visual Studio</h3><p>Load all symbols and then check all threads and stacks using the command.</p>
+<h3 id="Show-call-stacks-using-WinDbg-or-Visual-Studio"><a href="#Show-call-stacks-using-WinDbg-or-Visual-Studio" class="headerlink" title="Show call stacks using WinDbg or Visual Studio"></a>Show call stacks using WinDbg or Visual Studio</h3><p>Load all symbols and then check all threads and call stacks using the command.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ~*kv</span><br></pre></td></tr></table></figure>
 <p>Usually, we can locate which thread is hanging and which function is blocking the thread.</p>
 <h3 id="Add-stopwatch-debug-strings-in-the-active-thread-functions"><a href="#Add-stopwatch-debug-strings-in-the-active-thread-functions" class="headerlink" title="Add stopwatch debug strings in the active thread functions"></a>Add stopwatch debug strings in the active thread functions</h3><p>We can find the most time-consuming function call if the hang issue is a performance issue.</p>
-<h3 id="Compare-between-the-normal-case-and-abnormal-case"><a href="#Compare-between-the-normal-case-and-abnormal-case" class="headerlink" title="Compare between the normal case and abnormal case"></a>Compare between the normal case and abnormal case</h3><p>If we don’t have any obvious causes during the above analysis, try to create some normal cases. Each normal case should only differ from the abnormal case in one perspective. Then compare the symptom in the above analysis steps.</p>
+<h3 id="Compare-between-the-normal-case-and-abnormal-case"><a href="#Compare-between-the-normal-case-and-abnormal-case" class="headerlink" title="Compare between the normal case and abnormal case"></a>Compare between the normal case and abnormal case</h3><p>If we don’t have any obvious causes during the above analysis, try to create some normal cases. Each normal case should differ from the abnormal case in only one perspective. Then compare the symptom in the above analysis steps.</p>
 
       
     </div>
